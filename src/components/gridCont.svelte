@@ -1,3 +1,9 @@
+<script>
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
+  let showSingleSong = false;
+</script>
+
 <div
   class="grid-elem flex "
   style="    max-width: 1568px;
@@ -5,6 +11,9 @@ padding-top: 30px;
 justify-content: space-between;"
 >
   <img
+    on:click={() => {
+      dispatch("returnToHome", showSingleSong);
+    }}
     src="pp-logo.svg"
     alt="logo"
     class="svelte-1ltn2z cursor-pointer"

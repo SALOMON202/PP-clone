@@ -19,6 +19,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@splidejs/svelte-splide": "^0.2.9"
+		"@splidejs/svelte-splide": "^0.2.9",
+		"@vime/svelte": "^5.4.0"
 	}
 }

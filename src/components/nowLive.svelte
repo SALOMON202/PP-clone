@@ -4,6 +4,8 @@
   const dispatch = createEventDispatcher();
 
   import "@splidejs/svelte-splide/css";
+  import SingleSong from "./singleSong.svelte";
+  import { onMount } from "svelte";
   // var body = document.getElementsByTagName("BODY")[0];
   //   var width = body.offsetWidth;
   const musicArray = [
@@ -13,6 +15,8 @@
       minted: 28,
       price: "3.00 USD",
       src: "portrait.jpg",
+      song: "world.mp4",
+      contract: "0x624e240aca8e3535b81e3f7d19ac9c3b051e817f",
     },
     {
       title: "You live in hell already",
@@ -20,6 +24,8 @@
       minted: 18,
       price: "3.00 USD",
       src: "portrait.jpg",
+      song: "hell.mp4",
+      contract: "0x30806bf426bc762588d65ff9401d71b0a2203c07",
     },
 
     {
@@ -28,6 +34,8 @@
       minted: 12,
       price: "3.00 USD",
       src: "portrait.jpg",
+      song: "getout.mp4",
+      contract: "0x80288f1e1fe91947689340033eee3890189bdc39",
     },
     {
       title: "Goodbye miss Jane",
@@ -35,9 +43,11 @@
       minted: 19,
       price: "3.00 USD",
       src: "portrait.jpg",
+      song: "misss.mp4",
+      contract: "0x0621f5eb3504026c95f26fc8b5f3bf15cca6b5a3",
     },
   ];
-  let num;
+  let num = 2;
   let cambia = false;
   let perPages = [2, 3, 4, 1];
   let perMove = 1;
@@ -48,20 +58,31 @@
   // } else {
   //   console.log("no");
   // }
+  onMount(async () => {
+    if (window.innerWidth < 580) {
+      num = perPages[3];
+    } else if (window.innerWidth > 580 && window.innerWidth < 800) {
+      num = perPages[0];
+    } else if (window.innerWidth > 900 && window.innerWidth < 1200) {
+      num = perPages[1];
+    } else if (window.innerWidth > 1200) {
+      num = perPages[2];
+    }
+    console.log(num);
+  });
 </script>
 
 <svelte:window
   on:resize={() => {
-    if (window.innerWidth > 1000) {
-      num = perPages[1];
-    } else if (!window.screenTop && !window.screenY) {
-      num = perPages[2];
-    } else if (window.innerWidth < 580) {
+    if (window.innerWidth < 580) {
       num = perPages[3];
-    } else {
+    } else if (window.innerWidth > 580 && window.innerWidth < 800) {
       num = perPages[0];
+    } else if (window.innerWidth > 900 && window.innerWidth < 1200) {
+      num = perPages[1];
+    } else if (window.innerWidth > 1200) {
+      num = perPages[2];
     }
-    console.log(num);
   }}
 />
 
@@ -75,13 +96,16 @@
     <SplideSlide>
       <div
         class="flex flex-row justify-center  mb-16 "
-        on:keydown={() => {
+        on:keydown
+        on:click={() => {
           dispatch("openSingleSong", [
-            singleSong.first.src,
-            singleSong.first.title,
-            singleSong.first.by,
-            singleSong.first.minted,
-            singleSong.first.price,
+            singleSong.src,
+            singleSong.title,
+            singleSong.by,
+            singleSong.minted,
+            singleSong.price,
+            singleSong.song,
+            singleSong.contract,
           ]);
         }}
       >
