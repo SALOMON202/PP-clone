@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* *::-webkit-scrollbar{
+  display: none ;
+} */
+
+@layer base {
+  :root{
+    --color-text-base: #fff;
+    --color-text-base-rgb: 255  255 255;
+    --color-text-inverted: #111;
+    --color-text-inverted-rgb: 17 17 17;
+    --color-base-primary: #111;
+    --color-base-primary-rgb: 17  17 17;
+    --color-btn-spec: #EC4899;
+    --color-btn-spec-rgb: 236 72  153;
+    --color-btn-spec-hover:#CC0060;
+    --color-btn-spec-hover-rgb:204  0 96;
+    --color-input: #292929;
+    --color-input-rgb: 41 41 41;
+    --color-border-rgb: 40 110  149;
+    --color-base-inverted:#fff;
+    --color-base-inverted-rgb:255 255 255
+  }
+}
