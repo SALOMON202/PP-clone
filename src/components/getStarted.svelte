@@ -1,12 +1,11 @@
 <hr class="mr-6 ml-6 mb-20" />
 
-<span class="ml-6 text-5xl font-semibold text-surface-Tbase ml-12"
-  >Get started</span
->
+<span class="ml-6 text-5xl font-semibold text-surface-Tbase ">Get started</span>
 <ol class="mb-20">
   <li class="mt-5">
     <span
-      class="ml-6  text-3xl text-surface-Tbase font-medium flex"
+      class="ml-6
+        text-3xl text-surface-Tbase font-medium flex"
       style="gap:20px"
       ><div
         class="rounded-full bg-surface-inverted h-9 w-9  mr-1 text-surface-Tinverted text-3xl flex justify-center "
@@ -18,7 +17,8 @@
   </li>
   <li class="mt-5">
     <span
-      class="ml-6  text-3xl text-surface-Tbase font-medium flex"
+      class="ml-6
+        text-3xl text-surface-Tbase font-medium flex"
       style="gap:20px"
       ><div
         class="rounded-full bg-surface-inverted h-9 w-9  mr-1 text-surface-Tinverted text-3xl flex justify-center "
@@ -30,7 +30,8 @@
   </li>
   <li class="mt-5">
     <span
-      class="ml-6  text-3xl text-surface-Tbase font-medium flex"
+      class="ml-6
+        text-3xl text-surface-Tbase font-medium flex"
       style="gap:20px"
       ><div
         class="rounded-full bg-surface-inverted h-9 w-9  mr-1 text-surface-Tinverted text-3xl flex justify-center "
@@ -42,7 +43,8 @@
   </li>
   <li class="mt-5">
     <span
-      class="ml-6  text-3xl text-surface-Tbase font-medium flex"
+      class="ml-6
+        text-3xl text-surface-Tbase font-medium flex"
       style="gap:20px"
       ><div
         class="rounded-full bg-surface-inverted h-9 w-9  mr-1 text-surface-Tinverted text-3xl flex justify-center "
