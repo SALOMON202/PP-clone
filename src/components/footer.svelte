@@ -1,44 +1,32 @@
 <footer class="text-surface-Tbase ">
-  <hr class="text-surface-Tbase ml-12 mr-12" />
+  <hr class="text-surface-Tbase ml-6 mr-6" />
 
   <div
-    class="gridContainer mr-6 ml-6 mt-10"
-    style="    display: flex;
-  flex-direction: row;
-  justify-content: space-between;"
+    class="gridContainer mr-12 ml-12 mt-6 mb-8 flex flex-row justify-between"
   >
-    <div class="flex grid-company" style="    flex-direction: column;">
+    <div class="flex grid-company flex-col">
       <a href="http://">Marketplace</a>
       <a href="http://">For artists</a>
       <a href="http://">Magazine</a>
     </div>
-    <div
-      class="flex grid-resources"
-      style="      flex-direction: column;  gap: 10px;"
-    >
+    <div class="flex grid-resources flex-col gap-2">
       <a href="http://">About</a>
       <a href="http://">Whitepaper</a>
       <a href="http://">Media kit</a>
     </div>
-    <div class="flex grid-legal" style="flex-direction: column; gap:8px ">
+    <div class="flex grid-legal flex-col gap-2">
       <a class="leading-5" href="http://">Terms & <br />Conditions</a>
-      <a class="leading-5" href="http://">Privacy <br />Policy</a>
-      <a class="leading-5" href="http://">Cookie<br /> Policy</a>
-      <a class="leading-5" href="http://">Cookie<br /> Settings</a>
+      <a class="leading-5" href="http://"> Privacy Policy </a>
+      <a class="leading-5" href="http://">Cookie Policy</a>
+      <a class="leading-5" href="http://">Cookie Settings</a>
     </div>
-    <div
-      class="flex grid-social "
-      style="    flex-direction: row;
-    gap: 5px;"
-    >
+    <div class="flex grid-social flex-row gap-1">
       <div class=" w-8 h-8 bg-surface-inverted rounded-full one ">
         <a href="http://"
           ><img
-            class="down u"
+            class=" relative top-2 left-2"
             src="\twitter-16.png"
             alt=""
-            style="  position: relative;top: 8px;
-          left: 7px;"
           /></a
         >
       </div>
@@ -46,9 +34,9 @@
         <a href="http://"
           ><img
             src="\icons8-instagram-30.png"
-            class="h-5 down d"
+            class="h-5  relative top-1 left-1"
             alt=""
-            style="  position: relative;    top: 6px;
+            style=" top: 6px;
             left: 6px;"
           /></a
         >
@@ -56,10 +44,10 @@
       <div class=" w-8 h-8 bg-surface-inverted   rounded-full three">
         <a href="http://"
           ><img
-            class=" down t"
+            class="  relative"
             src="\discord-16.png"
             alt=""
-            style="  position: relative;    top: 8px;
+            style="    top: 8px;
           left: 8px;"
           /></a
         >
@@ -67,9 +55,3 @@
     </div>
   </div>
 </footer>
-
-<style>
-  .circle {
-    background-color: white;
-  }
-</style>

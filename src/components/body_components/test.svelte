@@ -1,7 +1,6 @@
 <script>
   import { Splide, SplideSlide } from "@splidejs/svelte-splide";
   import "@splidejs/svelte-splide/css";
-
   const projectsArray = [
     {
       title: "One",
@@ -24,11 +23,23 @@
   ];
 </script>
 
-<hr class="ml-6 mr-6 mb-12" />
-<div class="ml-6 mr-6 min-w-100% mb-6">
+<hr class=" mb-12" />
+<div class=" min-w-100% mb-6">
   <span class="text-2xl font-semibold text-surface-Tbase ">Test</span>
 
-  <Splide options={{ rewind: true }} aria-label="Svelte Splide Example">
+  <Splide
+    options={{
+      rewind: true,
+      perPage: 2,
+      breakpoints: {
+        975: {
+          perPage: 1,
+        },
+      },
+      pagination: false,
+    }}
+    aria-label="Svelte Splide Example"
+  >
     {#each projectsArray as singleProject}
       <SplideSlide>
         <div class="mt-6">
