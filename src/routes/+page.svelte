@@ -49,26 +49,26 @@
   <div style="min-width:550px ">
     {#if showSingleSong == false}
       <Main />
-      <div class="maxW mx-12 md:mx-6 lg:mx-auto ">
+      <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl  ">
         <NowLive on:openSingleSong={openSingleSong} />
       </div>
-      <div class="maxW mx-12 md:mx-6 lg:mx-auto">
+      <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
         <Banner />
       </div>
-      <div class="maxW mx-12 md:mx-6 lg:mx-auto">
+      <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
         <Test />
       </div>
-      <div class="maxW mx-12 md:mx-6 lg:mx-auto">
+      <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
         <Polkadot />
       </div>
-      <div class="maxW mx-12 md:mx-6 lg:mx-auto">
+      <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
         <GetStarted />
       </div>
-      <div class="maxW mx-12 md:mx-6 lg:mx-auto">
+      <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
         <Form />
       </div>
     {:else}
-      <div class="maxW mx-12 md:mx-6 lg:mx-auto">
+      <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
         <SingleSong {infoToPassToSingleSong} />
       </div>
     {/if}
@@ -78,5 +78,10 @@
 <style>
   .maxW {
     max-width: 1400px;
+  }
+  @media screen and (min-width: 1500px) {
+    .xl {
+      margin: auto;
+    }
   }
 </style>

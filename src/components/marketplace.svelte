@@ -6,7 +6,7 @@
 <div class="mt-44 " />
 <NowLive />
 
-<div class="ml-12 mr-12">
+<div class="ml-12 mr-12 pb-16">
   <span class="text-3xl text-surface-Tbase ">Marketplace</span>
 
   <Test />

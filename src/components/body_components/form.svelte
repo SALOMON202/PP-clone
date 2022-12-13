@@ -1,4 +1,4 @@
-<div class=" mb-20 ">
+<div class=" mb-28 ">
   <span class="text-surface-Tbase text-5xl font-semibold ">
     Never miss a drop
   </span><br />

@@ -23,18 +23,19 @@
       </span></span
     >
     <form action="" class="flex flex-col">
-      <label for="email" class="text-surface-Tbase opacity-50 mt-8">Email</label
+      <label for="email" class="text-surface-Tbase opacity-50 mt-8 pb-1"
+        >Email</label
       >
       <input
         type="email"
-        class=" bg-surface-input h-16 mb-2 focus: outline-none indent-4  caret-red-600"
+        class=" bg-surface-input h-16 mb-2 focus: outline-none indent-4  caret-red-600 text-surface-Tbase"
         name="email"
       />
       <div class="flex justify-between">
         <label for="password" class="text-surface-Tbase opacity-50 "
           >Password</label
         >
-        <span class="text-surface-btnSpec font-bold text-medium"
+        <span class="text-surface-btnSpec font-bold text-medium pt-1 pb-1"
           ><a href="/reset">Forgot Password?</a>
         </span>
       </div>
@@ -43,7 +44,7 @@
       >
         <input
           type={inputType}
-          class="bg-surface-input  h-8 w-full indent-4 focus: outline-none caret-red-600"
+          class="bg-surface-input  h-8 w-full indent-4 focus: outline-none caret-red-600 text-surface-Tbase"
           name="password"
         />
 

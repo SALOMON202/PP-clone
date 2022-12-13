@@ -4,7 +4,10 @@
   let showSingleSong = false;
 </script>
 
-<div class="flex flex-row justify-between">
+<div
+  class="flex flex-row justify-between"
+  style="margin:auto; max-width:1400px"
+>
   <div class="grid-elem flex flex-row pt-8 ">
     <a
       href="/"

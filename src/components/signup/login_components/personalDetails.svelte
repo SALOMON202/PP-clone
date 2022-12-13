@@ -16,7 +16,7 @@
   <span class="text-3xl text-surface-Tbase font-semibold  "
     ><nobr> Personal Details</nobr></span
   >
-  <hr class="mt-5 mb-5" style="width:90vw" />
+  <hr class="mt-5 mb-5 " style="width:60vw" />
 
   <div class="">
     <span class=" text-surface-Tbase font-medium"
@@ -31,8 +31,8 @@
         <input
           type="text"
           name="firstname"
-          class="flex flex-row pt-4 cursor-pointer pr-3 h-16 bg-surface-input "
-          style="width:90vw"
+          class="flex flex-row pt-4 cursor-pointer pr-3 h-16 bg-surface-input  indent-4 focus: outline-none caret-red-600 pb-4 text-surface-Tbase"
+          style="width:60vw"
         />
       </div>
       <div class="flex flex-col mt-6">
@@ -40,35 +40,35 @@
           >Last name *</label
         >
         <input
-          style="width:90vw"
+          style="width:60vw"
           type="text"
           name="text"
-          class="flex flex-row pt-4 cursor-pointer pr-3 h-16 bg-surface-input "
+          class="flex flex-row pt-4 cursor-pointer pr-3 h-16 bg-surface-input  indent-4 focus: outline-none caret-red-600 pb-4 text-surface-Tbase"
         />
       </div>
       <div class="flex flex-col mt-6">
         <label for="email" class="text-surface-Tbase opacity-50 ">Email *</label
         >
         <input
-          style="width:90vw"
+          style="width:60vw"
           type="email"
           name="email"
-          class="flex flex-row pt-4 cursor-pointer pr-3 h-16 bg-surface-input "
+          class="flex flex-row pt-4 cursor-pointer pr-3 h-16 bg-surface-input  indent-4 focus: outline-none caret-red-600 pb-4 text-surface-Tbase"
         />
       </div>
       <div class="flex justify-between">
-        <label for="password" class="text-surface-Tbase opacity-50 "
+        <label for="password" class="text-surface-Tbase opacity-50 pt-6 "
           >Create Password *</label
         >
       </div>
       <div
         class="flex flex-row pt-4 cursor-pointer pr-3 h-16 bg-surface-input "
-        style="width:90vw"
+        style="width:60vw"
       >
         <input
-          style="width:90vw"
+          style="width:60vw"
           type={inputType}
-          class="bg-surface-input  h-8 w-full indent-4 focus: outline-none caret-red-600"
+          class="bg-surface-input  h-8 w-full indent-4 focus: outline-none caret-red-600 text-surface-Tbase"
           name="password"
         />
 
@@ -92,12 +92,12 @@
         </div>
         <div
           class="flex flex-row pt-4 cursor-pointer pr-3 h-16 bg-surface-input "
-          style="width:90vw"
+          style="width:60vw"
         >
           <input
-            style="width:90vw"
+            style="width:60vw "
             type={inputType}
-            class="bg-surface-input  h-8 indent-4 focus: outline-none caret-red-600"
+            class="bg-surface-input cursor-pointer h-8 indent-4 focus: outline-none caret-red-600 text-surface-Tbase"
             name="password"
           />
 
@@ -105,37 +105,39 @@
             <MdRemoveRedEye />
           </div>
         </div>
-        <div class="flex flex-col mt-6">
-          <label for="date" class="text-surface-Tbase opacity-50 "
-            >Date of Birth *</label
-          >
-          <input
-            style="width:90vw"
-            type="date"
-            name="date"
-            class="flex flex-row pt-4 cursor-pointer pr-3 h-16 bg-surface-input "
-          />
-        </div>
-        <div class="flex flex-col mt-6">
-          <label for="gender" class="text-surface-Tbase opacity-50 "
-            >Gender*</label
-          >
-          <input
-            style="width:90vw"
-            type="text"
-            name="gender"
-            class="flex flex-row pt-4 cursor-pointer pr-3 h-16 bg-surface-input "
-          />
+        <div class="flex flex-row " style="width:60vw ; gap:6.6%">
+          <div class="flex flex-col mt-6 ">
+            <label for="date" class="text-surface-Tbase opacity-50 "
+              >Date of Birth *</label
+            >
+            <input
+              style="width:28vw"
+              type="date"
+              name="date"
+              class="bg-surface-input cursor-pointer h-16 indent-3 pr-2 focus: outline-none caret-red-600 text-surface-Tbase"
+            />
+          </div>
+          <div class="flex flex-col mt-6">
+            <label for="gender" class="text-surface-Tbase opacity-50 "
+              >Gender*</label
+            >
+            <input
+              style="width:28vw"
+              type="text"
+              name="gender"
+              class="bg-surface-input cursor-pointer h-16 indent-4 focus: outline-none caret-red-600 text-surface-Tbase"
+            />
+          </div>
         </div>
         <div class="flex flex-col mt-6">
           <label for="country" class="text-surface-Tbase opacity-50 "
             >Country*</label
           >
           <input
-            style="width:90vw"
+            style="width:60vw"
             type="text"
             name="country"
-            class="flex flex-row pt-4 cursor-pointer pr-3 h-16 bg-surface-input "
+            class="bg-surface-input cursor-pointer h-16 indent-4 focus: outline-none caret-red-600 text-surface-Tbase"
           />
         </div>
       </div>
@@ -144,7 +146,7 @@
           ><nobr> Profile Details</nobr></span
         >
       </div>
-      <hr class=" mt-5 mb-5" style="width:90vw" />
+      <hr class=" mt-5 mb-5" style="width:60vw" />
       <span class=" text-surface-Tbase font-medium  "
         ><nobr>People will know you with this name on PublicPressure </nobr>
       </span>
@@ -153,27 +155,25 @@
           >Display Name *</label
         >
         <input
-          style="width:90vw"
+          style="width:60vw"
           type="text"
           name="Display Name "
-          class="flex flex-row pt-4 cursor-pointer pr-3 h-16 bg-surface-input "
+          class="bg-surface-input cursor-pointer h-16 indent-4 focus: outline-none caret-red-600 text-surface-Tbase"
         />
       </div>
       <div class="mt-4">
-        <span class=" text-surface-Tbase font-medium "
-          ><nobr
-            >Choose your username carefully , it's unique for each user and you
-            will not be able to change it
-          </nobr>
+        <div class=" text-surface-Tbase font-medium  " style="width:60vw">
+          Choose your username carefully , it's unique for each user and you
+          will not be able to change it
           <div class="flex flex-col mt-6">
             <label for="username" class="text-surface-Tbase opacity-50 "
               >Username *</label
             >
             <input
-              style="width:90vw"
+              style="width:60vw"
               type="text"
               name="username"
-              class="flex flex-row pt-4 cursor-pointer pr-3 h-16 bg-surface-input "
+              class="bg-surface-input cursor-pointer h-16 indent-4 focus: outline-none caret-red-600 text-surface-Tbase"
             />
           </div>
           <ul class="ml-6 mb-3 mt-3 list-disc">
@@ -187,7 +187,7 @@
               <nobr> Underscores or dots (optional)</nobr>
             </li>
           </ul>
-        </span>
+        </div>
       </div>
 
       <div class="flex flex-col gap-10 mb-8 ml-2">
@@ -212,12 +212,12 @@
         </div>
       </div>
 
-      <span class=" text-surface-Tbase font-medium ">
+      <div class=" text-surface-Tbase font-medium " style="width:60vw ">
         By signing up, you agree that we may use your provided data for the
         registration and to send you notifications on our products and services.
         You can unsubscribe from notifications at any time in your settings. For
-        additional info please refer to our Privacy Policy.</span
-      >
+        additional info please refer to our Privacy Policy.
+      </div>
       <input
         class="bg-surface-btnSpec text-surface-Tbase font-bold rounded-sm mr-6 h-10 pl-8 pr-8 hover:bg-surface-btnSpec hover:bg-opacity-50 text-center mt-8 mb-16"
         value="Next"

@@ -15,5 +15,18 @@
 {#await myPromise}
   <Loading />
 {:then temp}
-  <Marketplace />
+  <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl  ">
+    <Marketplace />
+  </div>
 {/await}
+
+<style>
+  .maxW {
+    max-width: 1400px;
+  }
+  @media screen and (min-width: 1500px) {
+    .xl {
+      margin: auto;
+    }
+  }
+</style>

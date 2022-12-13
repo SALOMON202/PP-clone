@@ -12,7 +12,7 @@
 </script>
 
 <div
-  class="bg-cover bg-no-repeat bg-center mt-24 h-64 ml-0 mr-0 mb-96"
+  class="bg-cover bg-no-repeat bg-center mt-24 h-64 ml-0 mr-0"
   style="background-image: url('1667378390215.jpeg') ;
     margin-bottom: 1100px"
 >
@@ -21,14 +21,15 @@
     style="background: rgb(4,5,6);
     background: linear-gradient(0deg, rgba(4,5,6,1) 0%, rgba(247,243,243,0) 100%);"
   >
-    <div class="span-collector flex flex-col ml-5 pt- relative max-w-40 ">
+    <div class="span-collector flex flex-col ml-5 pt-4 relative max-w-40 ">
       <div class="w-40 h-20 mb-3 pl-4 pt-6 leading-7 ">
         <span class="text-surface-Tbase text-3xl ">One</span><br />
         <span class="text-surface-Tbase text-xl">Alien AirForce</span>
       </div>
-      <div class="w-40 h-20  pl-4 pt-6 leading-7 " />
-      <span class="text-surface-Tbase text-xl">Released</span>
-      <span class="text-surface-Tbase text-3xl">02 Nov 22</span>
+      <div class="w-40 h-20  pl-4 pt-14 leading-7 ">
+        <span class="text-surface-Tbase text-xl"> Released <br /> </span>
+        <span class="text-surface-Tbase text-3xl">02 Nov 22</span>
+      </div>
     </div>
   </div>
 

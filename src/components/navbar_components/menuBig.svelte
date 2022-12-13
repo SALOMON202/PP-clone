@@ -28,9 +28,10 @@
   </div>
   <div class="ml-6 text-surface-Tbase mt-6 text-xl flex ">
     <ul>
-      <a href="/marketplace"
-        ><li class="mb-2"><a href="/marketplace">Marketplace</a></li></a
-      >
+      <li class="mb-2 " href>
+        <a href="/marketplace">Marketplace</a>
+      </li>
+
       <a href="/"> <li class="mb-2"><a href="//">For artists</a></li></a>
       <a href="/"> <li class="mb-2"><a href="//">How it works</a></li></a>
     </ul>

@@ -2,7 +2,7 @@
   import PersonalDetails from "./personalDetails.svelte";
 </script>
 
-<div class="mb-96 pt-52 w-5">
+<div class="mb-96 pt-52 w-5" style="margin-inline:17.5%">
   <span class="text-4xl text-surface-Tbase font-bold  "
     ><nobr> Sign up as an individual</nobr></span
   >

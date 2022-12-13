@@ -14,7 +14,7 @@
 >
   <div
     class="grid-elem flex lg: ml-6 mr-6 pt-7 justify-between"
-    style="    max-width: 1568px;"
+    style="    max-width: 1068px;"
   >
     <img src="pp-logo.svg" alt="logo" class=" cursor-pointer w-44 invert" />
     <div

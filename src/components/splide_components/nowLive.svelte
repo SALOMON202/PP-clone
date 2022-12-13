@@ -24,7 +24,7 @@
       rewind: true,
       perPage: 4,
       breakpoints: {
-        768: {
+        700: {
           perPage: 1,
         },
         992: {

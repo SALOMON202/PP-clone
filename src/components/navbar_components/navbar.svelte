@@ -30,9 +30,9 @@
 
 <svelte:window on:resize={changeNavbar} />
 <nav
-  class="fixed inset-x-0 top-0 left-0 bg-surface-primary h-32 flex flex-col z-10"
+  class="fixed inset-x-0 top-0 left-0 bg-surface-primary h-32 flex flex-col z-10 "
 >
-  <div class="ml-6 mr-6">
+  <div class="ml-12  mr-12 resized ">
     <Intro />
 
     {#if changeGridCont == true}
@@ -50,3 +50,11 @@
     {/if}
   </div>
 </nav>
+
+<style>
+  @media screen and (max-width: 1024px) {
+    .resized {
+      margin-inline: 0.5rem;
+    }
+  }
+</style>

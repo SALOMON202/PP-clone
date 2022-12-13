@@ -10,7 +10,7 @@
   :root{
     --color-text-base: #fff;
     --color-text-base-rgb: 255  255 255;
-    --color-text-inverted: #111;
+    --color-text-inverted: #111111;
     --color-text-inverted-rgb: 17 17 17;
     --color-base-primary: #111;
     --color-base-primary-rgb: 17  17 17;
@@ -23,5 +23,7 @@
     --color-border-rgb: 40 110  149;
     --color-base-inverted:#fff;
     --color-base-inverted-rgb:255 255 255;
+    --color-grad-dark: #111111;
+    --color-grad-light: #ffffff1a ;
   }
 }

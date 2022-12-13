@@ -2,7 +2,6 @@
   import { Player, Video } from "@vime/svelte";
   import Listings from "./listings.svelte";
   import { onMount } from "svelte";
-  import {} from "@vime/svelte";
   import SingleSongDetails from "./singleSongDetails.svelte";
   export let infoToPassToSingleSong;
   let _BIGSCREEN_ = 1024;
@@ -35,10 +34,10 @@
 
 <div
   class="mt-36 mr-6 ml-6 flex  flex-col lg:flex-row query "
-  style=" min-width:600px ; margin-bottom:350px"
+  style=" min-width:600px ; margin-bottom:50px"
 >
-  <div class=" flex justify-center query">
-    <div class="videoplay" style="min-width:465px">
+  <div class=" flex justify-center query vid">
+    <div class="videoplay " style="min-width:100% ">
       <Player controls aspectRatio={aspect}>
         <Video crossorigin="" poster={infoToPassToSingleSong[0]}>
           <source data-src={infoToPassToSingleSong[5]} />
@@ -52,11 +51,12 @@
       <span class="text-3xl text-surface-Tbase font-semibold "
         >{infoToPassToSingleSong[1]}</span
       >
-      <div class="w-8 h-8 bg-surface-input rounded-sm ">
+      <div class="w-10 h-8 bg-surface-input rounded-sm ">
         <button
           ><svg
-            width="25"
-            viewBox="-35 -35 104 104"
+            width="29"
+            style="position:relative ; bottom:3px"
+            viewBox="-35 -35 100 100"
             xmlns="http://www.w3.org/2000/svg"
             aria-labelledby="title"
             aria-describedby="desc"
@@ -126,13 +126,13 @@
     </div>
 
     <div
-      class="h-10 bg-surface-btnSpec mt-10 text-center pt-2 text-surface-Tbase hover:opacity-50 lg: ml-10 relative top-28 mt-0"
+      class="h-10 bg-surface-btnSpec text-center pt-2 text-surface-Tbase hover:opacity-50 lg:ml-10 relative top-10 mb-5 ml-0"
     >
       ENDED //
     </div>
   </div>
   {#if vertiFlexDir == true}
-    <div class=" flex flex-row mt-10 justify-evenly ">
+    <div class=" flex flex-row mt-10  justify-evenly ">
       <button on:click={activateDetails} style="width:50%">
         <div class="flex flex-col ">
           <span
@@ -140,7 +140,8 @@
             class:opacity={!switchBetweenListAndDetail}>Details</span
           >
           <hr
-            style=" ;position:relative; left:135px ; width:100%"
+            class="relative w-full "
+            style="left:135px "
             class:moveBig={switchBetweenListAndDetail}
             class:movebackBig={!switchBetweenListAndDetail}
           />
@@ -167,22 +168,23 @@
 {#if horiFlexDir == true}
   <div class=" flex flex-row gap-10 ">
     <button on:click={activateDetails}>
-      <div class="flex flex-col ml-4 mr-4 w-28">
+      <div class="flex flex-col  w-40">
         <span
-          class="text-surface-Tbase  text-center font-semibold mb-2 text-lg"
+          class="text-surface-Tbase  text-center font-semibold mb-2 text-2xl"
           class:opacity={!switchBetweenListAndDetail}>Details</span
         >
         <hr
-          style=" ;position:relative; left:135px ; width:100%"
+          class="relative w-full"
+          style="left:135px"
           class:move={switchBetweenListAndDetail}
           class:moveback={!switchBetweenListAndDetail}
         />
       </div>
     </button>
     <button on:click={activateListings}>
-      <div class="flex flex-col w-28">
+      <div class="flex flex-col w-40 pr-14">
         <span
-          class="text-surface-Tbase  text-center font-semibold mb-2 text-lg"
+          class="text-surface-Tbase  text-center  font-semibold mb-2 text-2xl"
           class:opacity={switchBetweenListAndDetail}>Listings</span
         >
       </div>
@@ -197,48 +199,16 @@
   {/if}
 {/if}
 
-<!-- <div class=" flex flex-row gap-10">
-  <button on:click={activateDetails}>
-    <div class="flex flex-col ml-4 mr-4 w-28">
-      <span
-        class="text-surface-Tbase  text-center font-semibold mb-2 text-lg"
-        class:opacity={!switchBetweenListAndDetail}>Details</span
-      >
-      <hr
-        style=" ;position:relative; left:135px ; width:100%"
-        class:move={switchBetweenListAndDetail}
-        class:moveback={!switchBetweenListAndDetail}
-      />
-    </div>
-  </button>
-  <button on:click={activateListings}>
-    <div class="flex flex-col w-28">
-      <span
-        class="text-surface-Tbase  text-center font-semibold mb-2 text-lg"
-        class:opacity={switchBetweenListAndDetail}>Listings</span
-      >
-    </div>
-  </button>
-</div>
-<hr />
-
-{#if switchBetweenListAndDetail == false}
-  <Listings />
-{:else}
-  <SingleSongDetails {infoToPassToSingleSong} />
-{/if} -->
-
-<!-- <Details />
-  <Listings /> -->
 <style>
   @media screen and (min-width: 1024px) {
     .query {
       width: 465px;
     }
+    .vid {
+      min-width: 465px;
+    }
   }
-  .border {
-    border: 1px solid red;
-  }
+
   .opacity {
     opacity: 50%;
   }
