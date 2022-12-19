@@ -2,16 +2,10 @@
   import { createEventDispatcher } from "svelte";
   export let openBigMenu = false;
   const dispatch = createEventDispatcher();
-  let showSingleSong = false;
   let changeImg = false;
 </script>
 
-<a
-  href="/"
-  on:click={() => {
-    dispatch("returnToHome", showSingleSong);
-  }}
->
+<a href="/">
   <div
     class="grid-elem flex lg: ml-6 mr-6 pt-7 justify-between"
     style="    max-width: 1068px;"

@@ -1,5 +1,9 @@
+<script>
+  export let imgSrc;
+</script>
+
 <div
-  class="h-60 w-full mb-16 bg-no-repeat bg-cover bg-center"
+  class="h-60 w-full mb-16 mt-16 bg-no-repeat bg-cover bg-center"
   style="background-image: url('pods_banner.png');
  min-height:500px "
 >

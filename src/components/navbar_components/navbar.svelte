@@ -36,17 +36,9 @@
     <Intro />
 
     {#if changeGridCont == true}
-      <GridContBigger
-        {openBigMenu}
-        on:returnToHome={returnToHome}
-        on:openBigMenu={openMenuBig}
-      />
+      <GridContBigger {openBigMenu} on:openBigMenu={openMenuBig} />
     {:else}
-      <GridCont
-        {openBigMenu}
-        on:returnToHome={returnToHome}
-        on:openBigMenu={openMenuBig}
-      />
+      <GridCont {openBigMenu} on:openBigMenu={openMenuBig} />
     {/if}
   </div>
 </nav>

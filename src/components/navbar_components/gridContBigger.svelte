@@ -1,20 +1,9 @@
-<script>
-  import { createEventDispatcher } from "svelte";
-  const dispatch = createEventDispatcher();
-  let showSingleSong = false;
-</script>
-
 <div
   class="flex flex-row justify-between"
   style="margin:auto; max-width:1400px"
 >
   <div class="grid-elem flex flex-row pt-8 ">
-    <a
-      href="/"
-      on:click={() => {
-        dispatch("returnToHome", showSingleSong);
-      }}
-    >
+    <a href="/">
       <img
         src="pp-logo.svg"
         alt="logo"

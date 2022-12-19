@@ -15,7 +15,18 @@
 {#await myPromise}
   <Loading />
 {:then temp}
-  <div class=" ml-6 mr-6 lg:ml-12 lg:mr-12">
+  <div class=" maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
     <Collection />
   </div>
 {/await}
+
+<style>
+  .maxW {
+    max-width: 1400px;
+  }
+  @media screen and (min-width: 1500px) {
+    .xl {
+      margin: auto;
+    }
+  }
+</style>

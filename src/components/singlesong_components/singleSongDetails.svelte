@@ -1,49 +1,86 @@
 <script>
-  export let infoToPassToSingleSong;
+  export let data;
 </script>
 
-<div class="mt-6">
-  <div class="flex flex-col gap-7">
-    <div class="flex flex-row gap-5">
-      <div class="flex flex-col">
-        <span class="text-surface-Tbase opacity-40">Genre</span>
-        <span class="text-surface-Tbase">Alternative</span>
+{#if data.mediaType === "music"}
+  <div class="mt-6">
+    <div class="flex flex-col gap-7">
+      <div class="flex flex-row gap-5">
+        <div class="flex flex-col">
+          <span class="text-surface-Tbase opacity-40">Genre</span>
+          <span class="text-surface-Tbase">{data.genres}</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-surface-Tbase opacity-40">Format</span>
+          <span class="text-surface-Tbase">WAV</span>
+        </div>
+        <div class="flex flex-col">
+          {#if data.downloadable}
+            <span class="text-surface-Tbase opacity-40">Features</span>
+            <span class="text-surface-Tbase">Downloadable</span>
+          {/if}
+        </div>
       </div>
+
       <div class="flex flex-col">
-        <span class="text-surface-Tbase opacity-40">Format</span>
-        <span class="text-surface-Tbase">WAV</span>
+        <span class="text-surface-Tbase opacity-40">Credits</span>
+        <span class="text-surface-btnSpec">{data.createdBy.displayName}</span>
       </div>
+
       <div class="flex flex-col">
-        <span class="text-surface-Tbase opacity-40">Features</span>
-        <span class="text-surface-Tbase">Downloadable</span>
+        <span class="text-surface-Tbase opacity-40">Contract address</span>
+        <span class="text-surface-btnSpec">{data.address}</span>
       </div>
-    </div>
 
-    <div class="flex flex-col">
-      <span class="text-surface-Tbase opacity-40">Credits</span>
-      <span class="text-surface-btnSpec">{infoToPassToSingleSong[2]}</span>
-    </div>
-
-    <div class="flex flex-col">
-      <span class="text-surface-Tbase opacity-40">Contract address</span>
-      <span class="text-surface-btnSpec">{infoToPassToSingleSong[6]}</span>
-    </div>
-
-    <div class="flex flex-col mb-24">
-      <span class="text-surface-Tbase text-xl">Description</span>
-      <span class="text-surface-Tbase"
-        >Alien Airforce, AKA Crispin Gray, release their debut EP ‘One’.
-        Crispin, former guitarist and songwriter for Daisy Chainsaw, said Alien
-        Airforce was born as the result of him wanting to embrace modern
-        technology and being able to take complete control of his music again.
-        Daisy Chainsaw, best known for their 1992 chart hit ‘Love Your Money’
-        catapulted Crispin to a world of touring and mixing with the rock‘n’roll
-        hierarchy, with the likes of Dave Grohl, Eddie Vedder and Marilyn Manson
-        being fans. But he admits that sometimes in the early days, his
-        creativity was compromised, saying, “It was incredibly frustrating how
-        often one had to accept your work being released in a form you didn't
-        like or agree with.”</span
-      >
+      <div class="flex flex-col mb-24">
+        <span class="text-surface-Tbase text-xl">Description</span>
+        <span class="text-surface-Tbase">{data.description}</span>
+      </div>
     </div>
   </div>
-</div>
+{:else if data.mediaType == "collectible"}
+  <div class="mt-6">
+    <div class="flex flex-col gap-7">
+      <div class="flex flex-row gap-5">
+        <div class="flex flex-col">
+          <span class="text-surface-Tbase opacity-40">type</span>
+          <span class="text-surface-Tbase">{data.typeArt}</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-surface-Tbase opacity-40">Format</span>
+          <span class="text-surface-Tbase">fff</span>
+        </div>
+      </div>
+      <div class="flex flex-row">
+        <div
+          class="rounded-full h-7 w-7 mt-2 text-surface-Tbase font-bold text-center lg:ml-10 "
+          style="background-image:url({data.series.cardImage})"
+        />
+        <div class="flex flex-col mt-1 ml-1">
+          <span
+            class="text-surface-Tbase text-xs 
+  "
+          >
+            {data.createdBy.displayName}
+          </span>
+          <span
+            class="text-surface-Tbase text-xs
+  "
+            style="font-size: 0.6em;
+  line-height: 0.75rem;">Label</span
+          >
+        </div>
+      </div>
+
+      <div class="flex flex-col">
+        <span class="text-surface-Tbase opacity-40">Contract address</span>
+        <span class="text-surface-btnSpec">{data.address}</span>
+      </div>
+
+      <div class="flex flex-col mb-24">
+        <span class="text-surface-Tbase text-xl">Description</span>
+        <span class="text-surface-Tbase">{data.description}</span>
+      </div>
+    </div>
+  </div>
+{/if}

@@ -1,77 +1,63 @@
 <script>
-  import Footer from "../components/footer.svelte";
+  import { load } from "recaptcha-v3";
   import Form from "../components/body_components/form.svelte";
   import GetStarted from "../components/body_components/getStarted.svelte";
   import Main from "../components/splide_components/main.svelte";
   import NowLive from "../components/splide_components/nowLive.svelte";
   import Polkadot from "../components/body_components/polkadot.svelte";
-  import SingleSong from "../components/singlesong_components/singleSong.svelte";
-  import Test from "../components/body_components/test.svelte";
   import Banner from "../components/body_components/banner.svelte";
   import Loading from "../components/loading.svelte";
-  // let c;
-  // hi.subscribe((data) => {
-  //   c = data;
-  // });
-  // console.log(c);
-
-  let infoToPassToSingleSong;
-  let showSingleSong = false;
-  const openSingleSong = (e) => {
-    infoToPassToSingleSong = e.detail;
-    showSingleSong = true;
-    console.log(infoToPassToSingleSong);
-  };
-  export async function load({ context }) {
-    infoToPassToSingleSong;
-    return {
-      context: { infoToPassToSingleSong },
-    };
+  async function generateToken() {
+    const recaptcha = await load("6LcIadYfAAAAABEogXPi4R0-p_NJ6CIEyN0bfoI_");
+    let token = await recaptcha.execute("get");
+    return token;
   }
 
-  const myPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(console.log("si"));
-    }, 4000);
-  });
+  const loadData = async () => {
+    const url = "https://api-dev.publicpressure.io/main/v1/section/home";
+    const token = await generateToken();
+    const response = await fetch(url, {
+      headers: {
+        "g-recaptcha-response": token,
+      },
+    });
+    data = await response.json();
+    return data;
+  };
+  let data;
+  let imgSrc;
 </script>
 
-{#await myPromise}
+{#await loadData()}
   <Loading />
 {:then temp}
-  <div
-    class=" h-8 ml-6 z-50 fixed cursor-pointer top-20 w-44"
-    on:keyup
-    on:click={() => {
-      showSingleSong = false;
-    }}
-  />
-  <div style="min-width:550px ">
-    {#if showSingleSong == false}
-      <Main />
-      <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl  ">
-        <NowLive on:openSingleSong={openSingleSong} />
-      </div>
-      <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
-        <Banner />
-      </div>
-      <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
-        <Test />
-      </div>
-      <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
-        <Polkadot />
-      </div>
-      <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
-        <GetStarted />
-      </div>
-      <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
-        <Form />
-      </div>
-    {:else}
-      <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
-        <SingleSong {infoToPassToSingleSong} />
-      </div>
-    {/if}
+  <div class=" h-8 ml-6 z-50 fixed cursor-pointer top-20 w-44" />
+  <div style="min-width:550px; color:red ">
+    <Main dataToPassIntoMain={data[0].content} />
+    <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl  ">
+      {#each data.slice(1) as singleDataToPass}
+        {#if singleDataToPass.type == "drop"}
+          <Main dataToPassIntoMain={singleDataToPass.content} />
+        {:else if singleDataToPass.type == "template"}
+          <NowLive singleDataToPass={singleDataToPass.content} />
+        {/if}
+      {/each}
+    </div>
+    <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
+      <Banner {imgSrc} />
+    </div>
+    <div
+      class="maxW ml-12 mr-12 md:ml-6 \collectionmd:mr-6 lg:ml-12 lg:mr-12 xl "
+    />
+    <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
+      <Polkadot />
+    </div>
+    <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
+      <GetStarted />
+    </div>
+    <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
+      <Form />
+    </div>
   </div>
 {/await}
 

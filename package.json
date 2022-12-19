@@ -21,6 +21,8 @@
 	"dependencies": {
 		"@splidejs/svelte-splide": "^0.2.9",
 		"@vime/svelte": "^5.4.0",
+		"dayjs": "^1.11.7",
+		"recaptcha-v3": "^1.10.0",
 		"svelte-icons": "^2.1.0"
 	}
 }
