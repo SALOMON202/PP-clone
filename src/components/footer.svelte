@@ -6,18 +6,35 @@
   >
     <div class="flex grid-company flex-col ">
       <a href="/marketplace">Marketplace</a>
-      <a href="http://">For artists</a>
-      <a href="http://">Magazine</a>
+      <a href="/login" target="blank">For artists</a>
+      <a href="https://magazine.publicpressure.io/" target="blank">Magazine</a>
     </div>
     <div class="flex grid-resources flex-col gap-2">
-      <a href="http://">About</a>
-      <a href="http://">Whitepaper</a>
-      <a href="http://">Media kit</a>
+      <a href="https://we.publicpressure.io/" target="blank">About</a>
+      <a href="https://publicpressure.gitbook.io/whitepaper/" target="blank"
+        >Whitepaper</a
+      >
+      <a
+        href="https://www.dropbox.com/sh/s1ahfapz6l5gmm7/AAALKXpNLajLhXloHXhiEmqMa?dl=0I"
+        target="blank">Media kit</a
+      >
     </div>
     <div class="flex grid-legal flex-col gap-2">
-      <a class="leading-5" href="http://">Terms & <br />Conditions</a>
-      <a class="leading-5" href="http://"> Privacy Policy </a>
-      <a class="leading-5" href="http://">Cookie Policy</a>
+      <a
+        class="leading-5"
+        href="https://we.publicpressure.io/terms-and-conditions/"
+        >Terms & <br />Conditions</a
+      >
+      <a
+        class="leading-5"
+        href="https://we.publicpressure.io/public-pressure-privacy-policy/"
+        target="blank"
+      >
+        Privacy Policy
+      </a>
+      <a class="leading-5" href="https://we.publicpressure.io/cookie-policy/"
+        >Cookie Policy</a
+      >
       <a class="leading-5" href="http://">Cookie Settings</a>
     </div>
     <div class="flex grid-social flex-row gap-1">

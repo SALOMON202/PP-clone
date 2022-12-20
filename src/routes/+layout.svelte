@@ -6,7 +6,6 @@
 
   const reduceMenu = (e) => {
     openBigMenu = e.detail;
-    console.log(openBigMenu);
   };
   let showSingleSong;
   let openBigMenu;
@@ -18,7 +17,6 @@
   }}
   on:openBigMenu={(e) => {
     openBigMenu = e.detail;
-    console.log(openBigMenu);
   }}
   {openBigMenu}
 />

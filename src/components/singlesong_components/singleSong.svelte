@@ -3,6 +3,7 @@
   import Listings from "./listings.svelte";
   import { onMount } from "svelte";
   import SingleSongDetails from "./singleSongDetails.svelte";
+  import dayjs from "dayjs";
   export let data;
   function switchFlexDir() {
     if (window.innerWidth > _BIGSCREEN_) {
@@ -15,18 +16,21 @@
       vertiFlexDir = true;
     }
   }
-  const date = JSON.stringify(new Date());
-  let _BIGSCREEN_ = 1024;
-  let horiFlexDir;
-  let vertiFlexDir;
-  let aspect;
-  let switchBetweenListAndDetail = false;
   const activateListings = (e) => {
     switchBetweenListAndDetail = false;
   };
   const activateDetails = (e) => {
     switchBetweenListAndDetail = true;
   };
+  const endDateStr = data.endDate;
+  let date = new Date();
+  let endDate = new Date(endDateStr);
+  let _BIGSCREEN_ = 1024;
+  let horiFlexDir;
+  let vertiFlexDir;
+  let aspect;
+  let switchBetweenListAndDetail = false;
+
   onMount(() => {
     switchFlexDir();
   });
@@ -35,8 +39,8 @@
 <svelte:window on:resize={switchFlexDir} />
 
 <div
-  class="mt-36 mr-6  flex  flex-col lg:flex-row query "
-  style=" min-width:600px; margin-bottom:50px ;  width:100%"
+  class="mt-36 mr-6  flex  flex-col lg:flex-row query mb-12 "
+  style=" min-width:600px; width:100%"
 >
   <div class=" flex justify-center query vid">
     <div class="videoplay " style="min-width:100% ">
@@ -134,7 +138,7 @@
         </span>
       </span>
 
-      {#if data.endDate > date}
+      {#if endDate > date}
         <span class="lg:ml-12 mt-2 lg:mt-24">
           <span class=" text-surface-Tbase opacity-40 font-semibold text-sm "
             >Fixed price
@@ -142,7 +146,7 @@
             >{data.usdPrice}.00 USD</span
           >
         </span>
-      {:else if data.endDate < date}
+      {:else if endDate < date}
         <span class="lg:ml-12 mt-2 lg:mt-24">
           <span class=" text-surface-Tbase opacity-40 font-semibold text-sm "
             >Starting from</span
@@ -151,11 +155,11 @@
       {/if}
     </div>
 
-    {#if data.endDate < date}
+    {#if endDate < date}
       <div
         class="h-14 bg-surface-btnSpec text-center pt-2 text-surface-Tbase hover:opacity-50 lg:ml-12 relative top-10 mb-5 ml-0 lg:mt-20 lg:pt-4"
       >
-        ENDED //
+        ENDED {dayjs(`${endDate}`).format("DD MMM YY")}
       </div>
     {:else}
       <div
@@ -208,8 +212,8 @@
           class:opacity={!switchBetweenListAndDetail}>Details</span
         >
         <hr
-          class="relative w-full"
-          style="left:63% "
+          class="relative w-full leftBig"
+          style="left:90%  "
           class:move={switchBetweenListAndDetail}
           class:moveback={!switchBetweenListAndDetail}
         />
@@ -241,13 +245,16 @@
     .vid {
       min-width: 465px;
     }
+    .leftBig {
+      left: 63%;
+    }
   }
 
   .opacity {
     opacity: 50%;
   }
   .move {
-    transform: translateX(-63%);
+    transform: translateX(-90%);
     transition: all 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
   }
   .moveback {

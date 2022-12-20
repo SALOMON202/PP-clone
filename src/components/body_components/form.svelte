@@ -2,7 +2,7 @@
   <span class="text-surface-Tbase text-5xl font-semibold ">
     Never miss a drop
   </span><br />
-  <span class="text-surface-Tbase relative" style="top:15px"
+  <span class="text-surface-Tbase relative top-4"
     >Subscribe to our newsletter to receive updates on all our upcoming drops
     and new features.</span
   >

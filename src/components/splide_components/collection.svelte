@@ -1,5 +1,4 @@
 <script>
-  import { load } from "recaptcha-v3";
   import Nft from "./nft.svelte";
   import Details from "./details.svelte";
   import dayjs from "dayjs";
@@ -10,91 +9,70 @@
   function changeScreenDet() {
     showHr = false;
   }
-  async function generateToken() {
-    const recaptcha = await load("6LcIadYfAAAAABEogXPi4R0-p_NJ6CIEyN0bfoI_");
-    let token = await recaptcha.execute("get");
-    return token;
-  }
-  let data;
-  const loadData = async () => {
-    const url = `https://api-dev.publicpressure.io/main/v1/drop/${datasToBeSentToCollection._id}`;
-    const token = await generateToken();
-    const response = await fetch(url, {
-      headers: {
-        "g-recaptcha-response": token,
-      },
-    });
-    data = await response.json();
-    console.log(data);
-    return data;
-  };
-
   let datasToBeSentToCollection = JSON.parse(localStorage.getItem("datas"));
+  export let data;
 </script>
 
-{#await loadData() then data}
-  <div
-    class="bg-cover bg-no-repeat bg-center mt-36 h-80 ml-0 mr-0"
-    style="background-image: url({data.dashboardImage}) ;
+<div
+  class="bg-cover bg-no-repeat bg-center mt-36 h-80 ml-0 mr-0"
+  style="background-image: url({data.dashboardImage}) ;
   margin-bottom: 1100px"
-  >
-    <div
-      class="h-full w-full "
-      style="background: rgb(4,5,6);
+>
+  <div
+    class="h-full w-full "
+    style="background: rgb(4,5,6);
   background: linear-gradient(0deg, rgba(4,5,6,1) 0%, rgba(247,243,243,0) 100%);"
-    >
-      <div class="span-collector flex flex-col ml-2 relative  max-w-40 ">
-        <div class="w-40 h-20 mb-3 pl-4 pt-5 leading-7 ">
-          <span class="text-surface-Tbase text-3xl font-bold "
-            ><nobr>{data.title}</nobr></span
-          ><br />
-          <span class="text-surface-Tbase text-xl font-bold"
-            >{data.createdBy.displayName}</span
-          >
-        </div>
-        <div class="w-40 h-20  pl-4 pt-32 leading-7 ">
-          <span class="text-surface-Tbase text-sm"> Released <br /> </span>
-          <span class="text-surface-Tbase text-4xl font-bold"
-            ><nobr>{dayjs(`${data.startDate}`).format("DD MMM YY")}</nobr></span
-          >
-        </div>
-      </div>
-    </div>
-
-    <div class="flex flex-row xl:justify-start justify-center mt-12  ">
-      <div
-        class="flex flex-col text-center cursor-pointer w-1/2 xl:w-16 xl:ml-0 xl:mr-4"
-        on:keydown
-        on:click={changeScreenNft}
-      >
-        <span
-          class="text-surface-Tbase text-xl font-bold"
-          class:textCol={!showHr}>NFTs</span
+  >
+    <div class="span-collector flex flex-col ml-2 relative  max-w-40 ">
+      <div class="w-40 h-20 mb-3 pl-4 pt-5 leading-7 ">
+        <span class="text-surface-Tbase text-3xl font-bold "
+          ><nobr>{data.title}</nobr></span
+        ><br />
+        <span class="text-surface-Tbase text-xl font-bold"
+          >{data.createdBy.displayName}</span
         >
-        <hr class="mt-2 hidden" class:show={showHr} />
       </div>
-
-      <div
-        class="flex flex-col text-center cursor-pointer w-1/2 xl:w-16 xl:ml-4 xl:mr-4"
-        on:keydown
-        on:click={changeScreenDet}
-      >
-        <span
-          class="text-surface-Tbase text-xl font-bold  "
-          class:textCol={showHr}>Details</span
+      <div class="w-40 h-20  pl-4 pt-32 leading-7 ">
+        <span class="text-surface-Tbase text-sm"> Released <br /> </span>
+        <span class="text-surface-Tbase text-4xl font-bold"
+          ><nobr>{dayjs(`${data.startDate}`).format("DD MMM YY")}</nobr></span
         >
-        <hr class="mt-2 hidden " class:show={!showHr} />
       </div>
-    </div>
-    <hr class="invisible xl:visible" />
-    <div class="hidden" class:show={showHr}>
-      <Nft {datasToBeSentToCollection} />
-    </div>
-    <div class="hidden" class:show={!showHr}>
-      <Details {data} />
     </div>
   </div>
-{/await}
+
+  <div class="flex flex-row xl:justify-start justify-center mt-12  ">
+    <div
+      class="flex flex-col text-center cursor-pointer w-1/2 xl:w-16 xl:ml-0 xl:mr-4"
+      on:keydown
+      on:click={changeScreenNft}
+    >
+      <span class="text-surface-Tbase text-xl font-bold" class:textCol={!showHr}
+        >NFTs</span
+      >
+      <hr class="mt-2 hidden" class:show={showHr} />
+    </div>
+
+    <div
+      class="flex flex-col text-center cursor-pointer w-1/2 xl:w-16 xl:ml-4 xl:mr-4"
+      on:keydown
+      on:click={changeScreenDet}
+    >
+      <span
+        class="text-surface-Tbase text-xl font-bold  "
+        class:textCol={showHr}>Details</span
+      >
+      <hr class="mt-2 hidden " class:show={!showHr} />
+    </div>
+  </div>
+  <hr class="invisible xl:visible" />
+  <div class="hidden" class:show={showHr}>
+    <Nft {datasToBeSentToCollection} />
+  </div>
+  <div class="hidden" class:show={!showHr}>
+    <Details {data} />
+  </div>
+</div>
 
 <style>
   .show {

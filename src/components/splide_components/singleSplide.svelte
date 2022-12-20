@@ -1,6 +1,5 @@
 <script>
   import { load } from "recaptcha-v3";
-  import { createEventDispatcher } from "svelte";
   export let singleSong;
   export let marginBottom;
   async function generateToken() {
@@ -87,7 +86,7 @@
                 >Minted : <span class="text-surface-Tbase pr-3">{minted}</span
                 ></span
               >
-            {:else}
+            {:else if date > endDate}
               <span class="text-surface-Tbase text-sm pl-3"
                 >Secondary Listing</span
               >
@@ -105,7 +104,13 @@
               <span class="text-surface-Tbase pl-3 font-bold"
                 >0 of {singleSong.edition}</span
               >
-              <span class="text-surface-Tbase pr-3 font-bold">N/A</span>
+              {#if singleSong.listingsCount <= 0}
+                <span class="text-surface-Tbase pr-3 font-bold">N/A</span>
+              {:else}
+                <span class="text-surface-Tbase pr-3 font-bold"
+                  >{singleSong.listingsCount}.00 USD</span
+                >
+              {/if}
             {/if}
           </div>
         </div>

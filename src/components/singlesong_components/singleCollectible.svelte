@@ -1,12 +1,13 @@
 <script>
-  import { Player, Video } from "@vime/svelte";
   import Listings from "./listings.svelte";
   import { onMount } from "svelte";
   import SingleSongDetails from "./singleSongDetails.svelte";
   import dayjs from "dayjs";
-  // export let infoToPassToSingleSong;
   export let data;
-  const date = JSON.stringify(new Date());
+
+  const endDateStr = data.endDate;
+  let date = new Date();
+  let endDate = new Date(endDateStr);
 
   let _BIGSCREEN_ = 1024;
   let horiFlexDir;
@@ -31,7 +32,6 @@
   };
   onMount(() => {
     switchFlexDir();
-    console.log(data);
   });
 </script>
 
@@ -43,19 +43,11 @@
 >
   <div
     class=" flex justify-center query vid bg-no-repeat 
-     bg-cover bg-center mr-6 "
+     bg-cover bg-center mr-6  "
     style=" background-image: url({data.coverImage}); height:400px; width:100%"
-  >
-    <!-- <div class="videoplay " style="min-width:100% ">
-      <Player controls aspectRatio={aspect}>
-        <Video crossorigin="" poster={data.coverImage}>
-          <source data-src={data.mediaLink} />
-        </Video>
-      </Player>
-    </div> -->
-  </div>
+  />
 
-  <div class=" ">
+  <div>
     <div
       class="flex flex-row justify-between mt-3 mb-12 mr-10 lg:w-96 lg:mt-2 "
       style="min-width:500px"
@@ -122,7 +114,7 @@
             </span>
           </span>
 
-          {#if data.endDate > date}
+          {#if endDate > date}
             <span class=" mt-2 lg:mt-24">
               <span
                 class=" text-surface-Tbase opacity-40 font-semibold text-sm "
@@ -131,10 +123,10 @@
                 >{data.usdPrice}.00 USD</span
               >
             </span>
-          {:else if data.endDate < date}
-            <span class="lg:ml-10 mt-2 lg:mt-24">
+          {:else if endDate < date}
+            <span class="lg:ml-2 mt-2 lg:mt-24">
               <span
-                class=" text-surface-Tbase opacity-40 font-semibold text-sm "
+                class=" text-surface-Tbase opacity-40 font-semibold text-xl "
                 >Starting from</span
               > <br /><span class="text-3xl font-bold text-white ">N/A</span
               ></span
@@ -144,13 +136,13 @@
       </span>
     </div>
 
-    {#if data.endDate < date}
+    {#if endDate < date}
       <div
         class="h-14 bg-surface-btnSpec text-center  text-surface-Tbase hover:opacity-50 relative top-8 mb-5 ml-0  lg:pt-4"
       >
-        ENDED //
+        ENDED {dayjs(`${endDate}`).format("DD MMM YY HH:MM")}
       </div>
-    {:else if data.endDate > date}
+    {:else if endDate > date}
       <div
         class="h-14 bg-surface-btnSpec text-center  text-surface-Tbase hover:opacity-50 relative top-8 mb-5 ml-0 pt-4 "
       >

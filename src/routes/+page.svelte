@@ -21,18 +21,17 @@
         "g-recaptcha-response": token,
       },
     });
-    data = await response.json();
+    let data = await response.json();
     return data;
   };
-  let data;
   let imgSrc;
 </script>
 
 {#await loadData()}
   <Loading />
-{:then temp}
+{:then data}
   <div class=" h-8 ml-6 z-50 fixed cursor-pointer top-20 w-44" />
-  <div style="min-width:550px; color:red ">
+  <div style="min-width:550px">
     <Main dataToPassIntoMain={data[0].content} />
     <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl  ">
       {#each data.slice(1) as singleDataToPass}
@@ -46,9 +45,6 @@
     <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
       <Banner {imgSrc} />
     </div>
-    <div
-      class="maxW ml-12 mr-12 md:ml-6 \collectionmd:mr-6 lg:ml-12 lg:mr-12 xl "
-    />
     <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
       <Polkadot />
     </div>
