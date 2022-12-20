@@ -64,10 +64,8 @@
             {data.createdBy.displayName}
           </span>
           <span
-            class="text-surface-Tbase text-xs
-  "
-            style="font-size: 0.6em;
-  line-height: 0.75rem;">Label</span
+            class="text-surface-Tbase text-xs leading-3
+  ">Label</span
           >
         </div>
       </div>

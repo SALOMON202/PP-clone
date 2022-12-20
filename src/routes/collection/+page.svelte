@@ -25,18 +25,7 @@
 {#await loadData()}
   <Loading />
 {:then data}
-  <div class=" maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
+  <div class=" maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 2xl:m-auto ">
     <Collection {data} />
   </div>
 {/await}
-
-<style>
-  .maxW {
-    max-width: 1400px;
-  }
-  @media screen and (min-width: 1500px) {
-    .xl {
-      margin: auto;
-    }
-  }
-</style>

@@ -27,3 +27,76 @@
     --color-grad-light: #ffffff1a ;
   }
 }
+
+
+
+/*  */
+.maxW {
+  max-width: 1400px;
+}
+
+
+
+
+/*  */
+.move {
+  transform: translateX(-84%);
+  transition: all 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+.moveback {
+  transform: translateX(20%);
+  transition: all 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+.moveBig {
+  transform: translateX(-90%);
+  transition: all 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+.movebackBig {
+  transform: translateX(10%);
+  transition: all 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+.opacity {
+  opacity: 50%;
+}
+
+
+/*  */
+.show {
+  display: block;
+}
+.textCol {
+  color: grey;
+}
+
+
+/*  */
+
+.bar:before {
+  content: "";
+}
+
+.minibar:before {
+  content: "";
+}
+
+
+ @media screen and (min-width: 1500px) {
+  .xl {
+    margin: auto;
+  }
+} 
+
+/*  */
+
+.open {
+  transform: translateY(0);
+  transition: 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+/*  */
+
+@media screen and (min-width:1024px) {
+  .changeBg{
+    background-color: transparent;
+  }
+}

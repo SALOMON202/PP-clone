@@ -1,7 +1,5 @@
 <div
-  class="h-60 w-full mb-16 mt-16 bg-no-repeat bg-cover bg-center"
-  style="background-image: url('pods_banner.png');
- min-height:500px "
+  class="h-60 w-full mb-16 mt-16 bg-no-repeat bg-cover bg-center min-h-[500px] bg-[url('pods_banner.png')]"
 >
   <div class="flex flex-col pl-6 pt-4">
     <span class="text-surface-Tbase text-3xl font-bold ">Our pods are out</span>

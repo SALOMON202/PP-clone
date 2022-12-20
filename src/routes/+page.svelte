@@ -30,10 +30,12 @@
 {#await loadData()}
   <Loading />
 {:then data}
-  <div class=" h-8 ml-6 z-50 fixed cursor-pointer top-20 w-44" />
-  <div style="min-width:550px">
+  <div class=" h-8 ml-6 z-50 fixed cursor-pointer top-20 w-44 " />
+  <div class="min-w-[550px]">
     <Main dataToPassIntoMain={data[0].content} />
-    <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl  ">
+    <div
+      class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 2xl:m-auto  "
+    >
       {#each data.slice(1) as singleDataToPass}
         {#if singleDataToPass.type == "drop"}
           <Main dataToPassIntoMain={singleDataToPass.content} />
@@ -42,28 +44,17 @@
         {/if}
       {/each}
     </div>
-    <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
+    <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 2xl:m-auto ">
       <Banner {imgSrc} />
     </div>
-    <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
+    <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 2xl:m-auto ">
       <Polkadot />
     </div>
-    <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
+    <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 2xl:m-auto ">
       <GetStarted />
     </div>
-    <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl ">
+    <div class="maxW ml-12 mr-12 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 2xl:m-auto ">
       <Form />
     </div>
   </div>
 {/await}
-
-<style>
-  .maxW {
-    max-width: 1400px;
-  }
-  @media screen and (min-width: 1500px) {
-    .xl {
-      margin: auto;
-    }
-  }
-</style>

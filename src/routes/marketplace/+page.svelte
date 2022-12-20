@@ -63,18 +63,7 @@
 {#await loadSecondaryMktData()}
   <Loading />
 {:then data}
-  <div class="maxW ml-8 mr-8 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl  ">
+  <div class="maxW ml-8 mr-8 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 2xl:m-auto  ">
     <Marketplace singleDataToPass={data} {primaryMktDatas} />
   </div>
 {/await}
-
-<style>
-  .maxW {
-    max-width: 1400px;
-  }
-  @media screen and (min-width: 1500px) {
-    .xl {
-      margin: auto;
-    }
-  }
-</style>

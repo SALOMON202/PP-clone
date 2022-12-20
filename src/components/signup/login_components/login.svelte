@@ -12,7 +12,7 @@
   let inputChanger = false;
 </script>
 
-<div class="mt-44">
+<div class="mt-44 2xl:mx-[36%]">
   <div class="flex flex-col ">
     <span class="text-surface-Tbase font-bold text-3xl">Log in</span>
 
@@ -28,19 +28,19 @@
       >
       <input
         type="email"
-        class=" bg-surface-input h-16 mb-2 focus: outline-none indent-4  caret-red-600 text-surface-Tbase"
+        class=" bg-surface-input h-16 mb-2 focus: outline-none indent-4  caret-red-600 text-surface-Tbase max-w-[1400px] "
         name="email"
       />
-      <div class="flex justify-between">
+      <div class="flex justify-between  max-w-[1400px]">
         <label for="password" class="text-surface-Tbase opacity-50 "
           >Password</label
         >
-        <span class="text-surface-btnSpec font-bold text-medium pt-1 pb-1"
+        <span class="text-surface-btnSpec font-bold text-medium pt-1 pb-1 "
           ><a href="/reset">Forgot Password?</a>
         </span>
       </div>
       <div
-        class="flex flex-row pt-4 cursor-pointer pr-3 h-16 bg-surface-input "
+        class="flex flex-row pt-4 cursor-pointer pr-3 h-16 bg-surface-input  max-w-[1400px]"
       >
         <input
           type={inputType}

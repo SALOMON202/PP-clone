@@ -48,11 +48,10 @@
         </div>
         <button
           ><div
-            class="rounded-full bg-surface-input h-9 w-9 relative md:top-72 minwTop maxWbtn"
+            class="rounded-full bg-surface-input h-9 w-9 relative md:top-72 top-[600px] xl:top-[255px]"
           >
             <svg
-              class="relative"
-              style=" left:14px; top:9px"
+              class="relative left-[14px] top-[9px]"
               width="12"
               height="18"
               viewBox="0 0 12 18"
@@ -65,10 +64,12 @@
         </button>
 
         <div
-          class=" md:w-72 md:h-72 bg-cover bg-center minh minw maxW maxH"
-          style="min-height:16rem ; background-image: url({src});"
+          class=" md:w-72 md:h-72 bg-cover bg-center h-[600px] w-[500px]  xl:w-[256px] xl:h-[256px] min-h-[16rem] "
+          style="background-image: url({src});"
         />
-        <div class="w-96 md:w-72  maxW bg-surface-input flex flex-col minw">
+        <div
+          class=" md:w-72  xl:w-[256px] bg-surface-input flex flex-col w-[500px]"
+        >
           <span class="text-surface-Tbase font-bold text-sm  p-2 pl-3"
             ><nobr> {title}</nobr></span
           >
@@ -118,28 +119,3 @@
     </div>
   </a>
 {/await}
-
-<style>
-  @media screen and (max-width: 768px) {
-    .minw {
-      width: 600px;
-    }
-    .minh {
-      height: 600px;
-    }
-    .minwTop {
-      top: 600px;
-    }
-  }
-  @media screen and (min-width: 1250px) {
-    .maxH {
-      height: 256px;
-    }
-    .maxW {
-      width: 256px;
-    }
-    .maxWbtn {
-      top: 255px;
-    }
-  }
-</style>

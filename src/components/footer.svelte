@@ -1,8 +1,10 @@
 <footer class="text-surface-Tbase ">
-  <hr class="text-surface-Tbase ml-12 mr-12 relative bottom-20  xl " />
+  <hr
+    class="text-surface-Tbase ml-12 mr-12 relative bottom-20 2xl:mx-auto 2xl:max-w-[1400px]"
+  />
 
   <div
-    class="gridContainer mr-12 ml-12 -mt-12  flex flex-row justify-between xl relative bottom-4"
+    class="gridContainer mr-12 ml-12 -mt-12  flex flex-row justify-between 2xl:mx-auto 2xl:max-w-[1400px] relative bottom-4"
   >
     <div class="flex grid-company flex-col ">
       <a href="/marketplace">Marketplace</a>
@@ -51,33 +53,20 @@
         <a href="https://www.instagram.com/" target="blank"
           ><img
             src="\black-instagram-icon.png"
-            class="h-5  relative top-1 left-1 "
+            class="h-5  relative left-[6px] top-[6px]"
             alt=""
-            style=" top: 6px;
-            left: 6px;"
           /></a
         >
       </div>
       <div class=" w-8 h-8 bg-surface-inverted   rounded-full three">
         <a href="https://discord.com/" target="blank"
           ><img
-            class="  relative"
+            class="  relative top-[8px] left-[8px]"
             src="\discord-16.png"
             alt=""
-            style="    top: 8px;
-          left: 8px;"
           /></a
         >
       </div>
     </div>
   </div>
 </footer>
-
-<style>
-  @media screen and (min-width: 1500px) {
-    .xl {
-      margin-inline: auto;
-      max-width: 1400px;
-    }
-  }
-</style>

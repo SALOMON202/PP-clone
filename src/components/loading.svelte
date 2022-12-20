@@ -4,22 +4,10 @@
   />
   <div class="flex flex-row justify-evenly">
     <div
-      class="mt-2 ml-6 mr-6 h-96 relative minibar bg-surface-input before:absolute before:left-6 before:w-full before:h-96 before:animate-miniBackForth before:bg-gradient-to-r before:from-gradient-firstGradCol before:via-gradient-secondGradCol before:to-gradient-firstGradCol before:z-1000 "
-      style="width:47%"
+      class="mt-2 ml-6 mr-6 h-96 relative minibar bg-surface-input before:absolute before:left-6 before:w-full before:h-96 before:animate-miniBackForth before:bg-gradient-to-r before:from-gradient-firstGradCol before:via-gradient-secondGradCol before:to-gradient-firstGradCol before:z-1000 w-[47%] "
     />
     <div
-      class="mt-2 ml-6 mr-6 h-96 relative minibar bg-surface-input before:absolute before:left-6 before:w-full before:h-96 before:animate-miniBackForth before:bg-gradient-to-r before:from-gradient-firstGradCol before:via-gradient-secondGradCol before:to-gradient-firstGradCol before:z-1000"
-      style="width:47%"
+      class="mt-2 ml-6 mr-6 h-96 relative minibar bg-surface-input before:absolute before:left-6 before:w-full before:h-96 before:animate-miniBackForth before:bg-gradient-to-r before:from-gradient-firstGradCol before:via-gradient-secondGradCol before:to-gradient-firstGradCol before:z-1000 w-[47%]"
     />
   </div>
 </div>
-
-<style>
-  .bar:before {
-    content: "";
-  }
-
-  .minibar:before {
-    content: "";
-  }
-</style>

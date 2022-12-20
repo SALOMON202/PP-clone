@@ -38,19 +38,17 @@
 <svelte:window on:resize={switchFlexDir} />
 
 <div
-  class="mt-36 flex  flex-col lg:flex-row query justify-between mb-12"
-  style=" min-width:500px ; width:100%"
+  class="mt-36 flex  flex-col lg:flex-row query justify-between mb-12 min-w-[500px] w-[100%]"
 >
   <div
     class=" flex justify-center query vid bg-no-repeat 
-     bg-cover bg-center mr-6  "
-    style=" background-image: url({data.coverImage}); height:400px; width:100%"
+     bg-cover bg-center mr-6  h-[400px] w-[100%]"
+    style=" background-image: url({data.coverImage})"
   />
 
   <div>
     <div
-      class="flex flex-row justify-between mt-3 mb-12 mr-10 lg:w-96 lg:mt-2 "
-      style="min-width:500px"
+      class="flex flex-row justify-between mt-3 mb-12 mr-10 lg:w-96 lg:mt-2 min-w-[500px] "
     >
       <span class="text-5xl text-surface-Tbase font-bold tracking-wide">
         {data.title}
@@ -59,7 +57,7 @@
         <button
           ><svg
             width="40"
-            style="position:relative ; bottom:3px"
+            class="relative bottom-[3px]"
             viewBox="-27 -30 100 100"
             xmlns="http://www.w3.org/2000/svg"
             aria-labelledby="title"
@@ -153,21 +151,20 @@
 
   {#if vertiFlexDir == true}
     <div class=" flex flex-row mt-10  justify-evenly ">
-      <button on:click={activateDetails} style="width:50%">
+      <button on:click={activateDetails} class="w-[50%]">
         <div class="flex flex-col ">
           <span
             class="text-surface-Tbase  text-center font-semibold mb-2  text-xl"
             class:opacity={!switchBetweenListAndDetail}>Details</span
           >
           <hr
-            class="relative w-full "
-            style="left:63% "
+            class="relative w-full left-[90%]"
             class:moveBig={switchBetweenListAndDetail}
             class:movebackBig={!switchBetweenListAndDetail}
           />
         </div>
       </button>
-      <button on:click={activateListings} style="width:50%">
+      <button on:click={activateListings} class="w-[50%]">
         <div class="flex flex-col w-full ">
           <span
             class="text-surface-Tbase  text-center font-semibold mb-2 text-xl"
@@ -194,8 +191,7 @@
           class:opacity={!switchBetweenListAndDetail}>Details</span
         >
         <hr
-          class="relative w-full"
-          style="left:135px"
+          class="relative w-full left-[135px]"
           class:move={switchBetweenListAndDetail}
           class:moveback={!switchBetweenListAndDetail}
         />
@@ -218,34 +214,3 @@
     <SingleSongDetails {data} />
   {/if}
 {/if}
-
-<style>
-  @media screen and (min-width: 1024px) {
-    .query {
-      width: 465px;
-    }
-    .vid {
-      min-width: 465px;
-    }
-  }
-
-  .opacity {
-    opacity: 50%;
-  }
-  .move {
-    transform: translateX(-63%);
-    transition: all 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
-  }
-  .moveback {
-    transform: translateX(20%);
-    transition: all 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
-  }
-  .moveBig {
-    transform: translateX(-63%);
-    transition: all 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
-  }
-  .movebackBig {
-    transform: translateX(35%);
-    transition: all 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
-  }
-</style>

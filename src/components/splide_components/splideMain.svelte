@@ -7,10 +7,10 @@
 <div>
   <a href="/collection">
     <div
-      class="bg-cover bg-no-repeat bg-center mt-20  ml-0 mr-0 mb-4 flex justify-center"
-      style="background-image: url({imgSrc}) ; height:550px"
+      class="bg-cover bg-no-repeat bg-center mt-20  ml-0 mr-0 mb-4 flex justify-center h-[550px]"
+      style="background-image: url({imgSrc})"
     >
-      <div class="ml-12 mt-40" style="width:1400px">
+      <div class="ml-12 mt-40 w-[1400px]">
         <div class="span-collector flex flex-col ml-5 pt-28 relative top-20 ">
           <div
             class="bg-surface-primary w-min mb-3  leading-7 rounded-sm pt-4 pb-4"

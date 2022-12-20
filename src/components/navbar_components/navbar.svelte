@@ -32,7 +32,7 @@
 <nav
   class="fixed inset-x-0 top-0 left-0 bg-surface-primary h-32 flex flex-col z-10 "
 >
-  <div class="ml-12  mr-12 resized ">
+  <div class="ml-12  mr-12 lg:ml-[2.5rem] lg:mr-[2.5rem]">
     <Intro />
 
     {#if changeGridCont == true}
@@ -42,11 +42,3 @@
     {/if}
   </div>
 </nav>
-
-<style>
-  @media screen and (max-width: 1024px) {
-    .resized {
-      margin-inline: 0.5rem;
-    }
-  }
-</style>

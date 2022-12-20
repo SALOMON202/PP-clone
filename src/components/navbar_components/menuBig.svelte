@@ -36,13 +36,13 @@
       <a href="/"> <li class="mb-2"><a href="//">How it works</a></li></a>
     </ul>
   </div>
-  <div class="flex flex-row justify-evenly mt-6 max-w-full">
-    <a href="/login" style="width:45%"
+  <div class="flex flex-row justify-evenly mt-6 max-w-full w-[45%]">
+    <a href="/login"
       ><button class="bg-surface-Tbase h-14 rounded-sm font-bold w-full  "
         >Login</button
       ></a
     >
-    <a href="/signup" style="width:45%">
+    <a href="/signup" class="w-[45%]">
       <button
         class="bg-surface-btnSpec h-14 rounded-sm font-bold text-surface-Tbase  w-full"
         >Sign up</button
@@ -50,10 +50,3 @@
     >
   </div>
 </nav>
-
-<style>
-  .open {
-    transform: translateY(0);
-    transition: 0.2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
-  }
-</style>

@@ -52,8 +52,7 @@
   </li>
 </ol>
 <div
-  class=" w-100% mb-20 bg-cover bg-no-repeat bg-center border border-solid border-transparent "
-  style=" background-image:url('apply-artist-label_desktop.png') ; height:30rem"
+  class=" w-100% mb-20 bg-cover bg-no-repeat bg-center border border-solid border-transparent bg-[url('apply-artist-label_desktop.png')] h-[30rem]"
 >
   <div class="flex flex-col mt-52  pb-3 ">
     <h2 class="text-surface-Tbase font-bold text-5xl leading-10 ml-6">

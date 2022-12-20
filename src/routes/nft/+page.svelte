@@ -27,23 +27,12 @@
   <Loading />
 {:then data}
   {#if data.mediaType == "music"}
-    <div class="maxW ml-8 mr-8 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl  ">
+    <div class="maxW ml-3 mr-3 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 2xl:m-auto  ">
       <SingleSong {data} />
     </div>
   {:else if data.mediaType == "collectible"}
-    <div class="maxW ml-8 mr-8 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 xl  ">
+    <div class="maxW ml-8 mr-8 md:ml-6 md:mr-6 lg:ml-12 lg:mr-12 2xl:m-auto  ">
       <SingleCollectible {data} />
     </div>
   {/if}
 {/await}
-
-<style>
-  .maxW {
-    max-width: 1400px;
-  }
-  @media screen and (min-width: 1500px) {
-    .xl {
-      margin: auto;
-    }
-  }
-</style>

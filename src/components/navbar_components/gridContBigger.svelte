@@ -1,7 +1,4 @@
-<div
-  class="flex flex-row justify-between"
-  style="margin:auto; max-width:1400px"
->
+<div class="flex flex-row justify-between m-auto max-w-[1400px]">
   <div class="grid-elem flex flex-row pt-8 ">
     <a href="/">
       <img
